@@ -1,0 +1,103 @@
+<!doctype html>
+<html ng-app="WebFeedback" ng-cloak>
+<head>
+	<title>Web App for Testing and Feedback</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+<div class="container" ng-controller="mainController">
+	<div class="header">
+        <ul class="nav nav-pills pull-right">
+          	<li><a href="/logout">Logout</a></li>
+          	<li>Welcome <%= user.local.name %></li>
+        </ul>
+        <h3 class="text-muted"><%= user.local.name %></h3>
+    </div>
+    <div ng-hide="hideWhole">
+		<div class="jumbotron text-center">
+			<h1><span class="fa fa-anchor"></span> Dashboard</h1>
+			<input type="hidden" class="form-control" ng-model="companyID" value="<%= user._id %>">
+			<a ng-click="addProject()" class="btn btn-default"><span class="fa fa-paperclip"></span> Add project</a>
+		</div>
+
+		<div id="project-show-form" class="row" ng-hide="addProjectClick">	
+			<div class="col-sm-8 col-sm-offset-2">
+				<table class="table table-bordered"> 
+				    <thead>
+				    	<tr>
+					    	<th>
+					    		Name
+					    	</th>
+					    	<th>
+					    		Project ID
+					    	</th>
+					    </tr>
+				    </thead>
+				    <tbody>
+				    	<tr ng-repeat="project in allProjects">
+					    	<td>
+					    		<a style="cursor: pointer;" ng-click="ViewProject(project._id)">{{project.name}}</a>
+					    	</td>
+					    	<td>
+					    		<a style="cursor: pointer;" ng-click="ViewProject(project._id)">{{project._id}}</a>
+					    	</td>
+					    </tr>
+				    </tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="project-form" class="row" ng-show="addProjectClick">
+			<div class="col-sm-8 col-sm-offset-2">
+				<form>
+					<div class="form-group" ng-repeat="projectinfo in Projects">
+						<div class="alert alert-danger" ng-show="projectFormError">Please fill all the fields</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="name" ng-model="projectinfo.name">
+						</div>
+						<div class="form-group">
+							<input type="hidden" class="form-control" name="companyID" value="{{idBind('<%= user._id %>', $index)}}" ng-model="projectinfo.companyID">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary pull-right" ng-click="createProject()">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div ng-show="hideWhole">
+		<h4 class="pull-right"><a style="margin-bootom: 10px; cursor: pointer;" ng-click="backbutton()">BACK</a></h4>
+		<table class="table table-bordered" ng-repeat="data in FeedbackData"> 
+			<tr>
+				<td>Text</td>
+				<td>{{data.text}}</td>
+			</tr>
+			<tr>
+				<td>Browser</td>
+				<td>{{data.browser}}</td>
+			</tr>
+			<tr>
+				<td>OS</td>
+				<td>{{data.OS}}</td>
+			</tr>
+			<tr>
+				<td>Type</td>
+				<td>{{data.type}}</td>
+			</tr>
+			<tr>
+				<td>Image</td>
+				<td><img src="{{data.image}}" width: 300px;height: 300px;></td>
+			</tr>
+		</table>
+	</div>
+	<script>
+		window.companyID = '<%= user._id %>';
+	</script>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+<script src="js/controllers/main.js"></script>
+<script src="js/services/WebFeedback.js"></script>
+<script src="js/core.js"></script>
+</body>
+</html>

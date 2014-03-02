@@ -1,0 +1,168 @@
+.WebTools-panel {
+	position: fixed;
+	top: 150px;
+	left: 0;
+	z-index: 100000;
+}
+.WebTools-toggle-button {
+	margin: 0px;
+	margin-left: -2px;
+	padding: 0px;
+	float: left;
+	width: 40px;
+	height: 40px;
+	background: url("http://localhost:8080/clientFiles/tool_panel.png") no-repeat center center;
+	-moz-border-top-right-radius: 2px;
+	border-top-right-radius: 2px;
+	-moz-border-bottom-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, .1);
+	cursor: pointer;
+	-moz-box-shadow:    2px 3px 6px -2px #000;
+  	-webkit-box-shadow: 2px 3px 6px -2px #000;
+  	box-shadow:         2px 3px 6px -2px #000;
+}
+.WebTools-menu {
+	position: fixed;
+	top: -50px;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	font-size: 1em;
+	height: 40px;
+	z-index: 100000;
+	line-height: 40px;
+	-moz-box-shadow:    2px 3px 6px -2px #000;
+  	-webkit-box-shadow: 2px 3px 6px -2px #000;
+  	box-shadow:         2px 3px 6px -2px #000;
+  	-webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+.WebTools-menu.animated {
+	top: 0;
+}
+.WebTools-menu a {
+	margin: 0;
+	width: 100px;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	color: #000;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.WebTools-menu a.WebTools-bug {
+	background: #CD171E;
+	color: #fff;
+}
+.WebTools-menu a.WebTools-feedback {
+	background: #0099ff;	
+	color: #fff;
+}
+.WebTools-menu a.WebTools-suggestion {
+	background: #FFA500;
+}
+.WebTools-menu a:hover {
+	color: #fff;
+	background: #000;
+}
+.WebTools-menu a.selected:before {
+	content: '\27BD  '
+}
+.WebTools-overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width:100%;
+	height: 100%;
+	z-index: 99999;
+	background: #000;
+	opacity: 0.1;
+	display: none;
+}
+.WebTools-popup {
+	position: fixed;
+	top: 100px;
+	left: 2.5%;
+	width: 95%;
+	height: 500px;
+	max-width: 900px;
+	z-index: 100000;
+	background: #FFF;
+	color: #000;
+	padding: 3px 10px;
+	-moz-box-shadow:    2px 3px 6px -2px #000;
+  	-webkit-box-shadow: 2px 3px 6px -2px #000;
+  	box-shadow:         2px 3px 6px -2px #000;
+  	display: none;
+}
+.WebTools-close {
+	right: -6px;
+	position: absolute;
+	top: -5px;
+	width: 48px;
+	height: 48px;
+	z-index: 10000;
+}
+.WebTools-close img {
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+.WebTools-selection-box {
+    position: absolute;
+	background: #ccc;
+	border: 2px dashed #000;
+	z-index: 10000;
+}
+.WebTools-popup canvas, .WebTools-popup-content img {
+	margin: 0 auto;
+	display: block;
+}
+.WebTools-popup-content {
+	margin: 40px 0 10px 0;
+	height: 450px;
+	overflow-y: auto;
+}
+.WebTools-popup-content p {
+	margin: 12px 5px 5px;
+}
+.WebTools-popup-content strong {
+	font-weight: 800;
+}
+.WebTools-fleft {
+	float: left;
+}
+.WebTools-fright {
+	float: right;
+}
+.WebTools-popup-content select {
+	display: block;
+	margin-bottom: 10px;
+}
+.WebTools-popup-content textarea {
+	height: 150px;
+	width: 90%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-left: 5%;
+}
+.WebTools-button {
+	background: #009cff;
+	float: right;
+	color: #fff;
+	text-align: center;
+	width: 120px;
+	padding: 5px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.WebTools-button:hover {
+	background: #000;
+}

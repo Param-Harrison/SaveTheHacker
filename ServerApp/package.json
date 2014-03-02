@@ -1,0 +1,13 @@
+{
+	"name": "Testing-Feedback",
+	"main": "app.js",
+	"dependencies" : {
+	    "express" : "latest", 			
+	    "ejs" : "latest", 				
+	    "mongoose" : "latest", 			
+	    "passport" : "latest", 		
+	    "passport-local" : "latest",
+	    "connect-flash" : "latest", 	
+	    "bcrypt-nodejs" : "latest" 		
+	  }
+}

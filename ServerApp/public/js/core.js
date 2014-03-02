@@ -1,0 +1,1 @@
+angular.module('WebFeedback', ['WebFeedbackController', 'WebFeedbackService']);
