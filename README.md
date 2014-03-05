@@ -9,8 +9,8 @@ I have created a Feedback / Testing App.
 
 Technologies
 ------------
-Node JS / express JS
-Mongo DB
-Angular JS
-jQuery
-html2canvas (For taking scrrenshot in the frontend)
+- Node JS / express JS
+- Mongo DB
+- Angular JS
+- jQuery
+- html2canvas (For taking scrrenshot in the frontend)
